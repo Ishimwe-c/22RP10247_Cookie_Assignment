@@ -49,23 +49,19 @@ public class Ruhuta extends HttpServlet {
         request.getRequestDispatcher("ish.jsp").forward(request, response);
 			}
 
-	
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-		// TODO Auto-generated method stub
+	
 				String username = request.getParameter("username");
-
-		        // Create a cookie to store the username
 		        Cookie userCookie = new Cookie("username", username);
 		        userCookie.setMaxAge(60*60*24*30); // 30 days
 		        response.addCookie(userCookie);
 
-		        // Redirect to the JSP page
+		        
 		        response.sendRedirect("ish.jsp");
 
 	}
